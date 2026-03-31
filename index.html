@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyril Otwane | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --surface: #121212;
+            --gold: #d4af37;
+            --text: #ffffff;
+            --text-muted: #a0a0a0;
+            --border: #2a2a2a;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.6; }
+
+        nav { 
+            padding: 1.5rem 10%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: rgba(10, 10, 10, 0.9); 
+            backdrop-filter: blur(10px); 
+            border-bottom: 1px solid var(--border); 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+        }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--gold); text-decoration: none; }
+
+        header { 
+            padding: 8rem 10% 4rem; 
+            text-align: center; 
+            background: radial-gradient(circle at top, #1a1a1a 0%, #0a0a0a 100%); 
+        }
+        
+        .profile-circle {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            margin: 0 auto 2rem;
+            overflow: hidden;
+            background: #1a1a1a;
+        }
+        .profile-circle img { width: 100%; height: 100%; object-fit: cover; }
+
+        h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 7vw, 4rem); margin-bottom: 1rem; color: #fff; }
+        
+        .contact-links { margin-bottom: 2rem; }
+        .contact-links a { 
+            display: inline-block; 
+            color: var(--gold); 
+            text-decoration: none; 
+            margin: 0 10px; 
+            font-size: 0.9rem; 
+        }
+
+        .bio { font-size: 1.05rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; line-height: 1.7; }
+
+        section { padding: 6rem 10%; border-bottom: 1px solid var(--border); }
+        h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 4rem; text-align: center; color: var(--gold); }
+
+        .expertise-grid { 
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skill-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.4s;
+        }
+        .skill-item:hover { border-color: var(--gold); transform: translateY(-5px); }
+
+        .skill-info { padding: 1.2rem; text-align: center; border-bottom: 1px solid var(--border); }
+        .skill-info h3 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); }
+
+        .image-duo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 180px;
+            background: var(--border);
+        }
+        .image-duo div { width: 100%; height: 100%; overflow: hidden; border-right: 1px solid var(--border); }
+        .image-duo img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: 0.5s; }
+        .skill-item:hover .image-duo img { opacity: 1; }
+
+        .contact-footer { text-align: center; padding: 6rem 10%; background: #070707; }
+        .cta-btn { 
+            display: inline-block; 
+            padding: 1rem 2.5rem; 
+            background: var(--gold); 
+            color: #000; 
+            text-decoration: none; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            border-radius: 4px;
+        }
+
+        footer { padding: 3rem; text-align: center; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border); }
+
+        @media (max-width: 768px) { header, section { padding: 5rem 5%; } .image-duo { height: 140px; } }
+    </style>
+</head>
+<body>
+
+    <nav><a href="#" class="logo">C. OTWANE</a></nav>
+
+    <header id="about">
+        <div class="profile-circle"><img src="profile.jpg" alt="Cyril Otwane"></div>
+        <h1>Cyril Otwane</h1>
+        <div class="contact-links">
+            <a href="mailto:cyrilotwane84@gmail.com">cyrilotwane84@gmail.com</a>
+            <a href="https://wa.me/254742868425" target="_blank">WhatsApp: 0742868425</a>
+        </div>
+        <p class="bio">Based in <b>Nairobi, Kenya</b>. Expertise in <b>Drones, IoT, and Software</b>.</p>
+    </header>
+
+    <section id="expertise">
+        <h2>Expertise & Programs</h2>
+        <div class="expertise-grid">
+            
+            <div class="skill-item">
+                <div class="skill-info"><h3>Drone Simulation</h3></div>
+                <div class="image-duo">
+                    <div><img src="drone1.jpg" alt="D1"></div>
+                    <div><img src="drone2.jpg" alt="D2"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-info"><h3>IoT Systems</h3></div>
+                <div class="image-duo">
+                    <div><img src="iot1.jpg" alt="I1"></div>
+                    <div><img src="iot2.jpg" alt="I2"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-info"><h3>Javascript</h3></div>
+                <div class="image-duo">
+                    <div><img src="js1.jpg" alt="J1"></div>
+                    <div><img src="js2.jpg" alt="J2"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-info"><h3>Python</h3></div>
+                <div class="image-duo">
+                    <div><img src="py1.jpg" alt="P1"></div>
+                    <div><img src="py2.jpg" alt="P2"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-info"><h3>Robotics</h3></div>
+                <div class="image-duo">
+                    <div><img src="robot1.jpg" alt="R1"></div>
+                    <div><img src="robot2.jpg" alt="R2"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-info"><h3>UI / UX Design</h3></div>
+                <div class="image-duo">
+                    <div><img src="ux1.jpg" alt="U1"></div>
+                    <div><img src="ux2.jpg" alt="U2"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-info"><h3>Web Basics</h3></div>
+                <div class="image-duo">
+                    <div><img src="web1.jpg" alt="W1"></div>
+                    <div><img src="web2.jpg" alt="W2"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="contact-footer">
+        <a href="https://wa.me/254742868425" class="cta-btn">WhatsApp 0742868425</a>
+    </div>
+
+    <footer><p>© 2026 CYRIL OTWANE — NAIROBI, KENYA</p></footer>
+
+</body>
+</html>
