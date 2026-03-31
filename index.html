@@ -41,6 +41,7 @@
             width: 160px; height: 160px; border-radius: 50%;
             border: 2px solid var(--gold); margin: 0 auto 2rem;
             overflow: hidden; background: #1a1a1a;
+            display: flex; align-items: center; justify-content: center;
             box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
         }
         .profile-circle img { width: 100%; height: 100%; object-fit: cover; }
@@ -50,28 +51,34 @@
         
         .contact-links { margin-bottom: 2rem; }
         .contact-links a { color: var(--text); text-decoration: none; margin: 0 12px; font-size: 0.9rem; border-bottom: 1px solid var(--gold); padding-bottom: 2px; transition: 0.3s; }
+        .contact-links a:hover { color: var(--gold); }
 
         .intro-section { padding: 4rem 10%; text-align: center; max-width: 900px; margin: 0 auto; }
         .intro-text { font-size: 1.2rem; color: var(--text-muted); line-height: 1.8; }
         .intro-text b { color: var(--gold); }
 
         .learning-summary { background: var(--surface); padding: 5rem 10%; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .learning-summary h2 { color: var(--gold); text-align: center; margin-bottom: 3rem; font-family: 'Playfair Display', serif; }
         .learning-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; max-width: 1100px; margin: 0 auto; }
         .learning-card { padding: 2rem; border: 1px solid var(--border); border-radius: 8px; }
-        .learning-card h4 { color: var(--gold); margin-bottom: 1rem; }
+        .learning-card h4 { color: var(--gold); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
 
         section { padding: 6rem 10%; }
         h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 4rem; text-align: center; color: var(--gold); }
 
         .expertise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; max-width: 1200px; margin: 0 auto; }
-        .skill-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+        .skill-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: 0.4s; }
+        .skill-item:hover { transform: translateY(-8px); border-color: var(--gold); }
         .skill-info { padding: 1.5rem; text-align: center; border-bottom: 1px solid var(--border); }
         .skill-info h3 { font-size: 1rem; color: var(--gold); text-transform: uppercase; }
 
         .image-duo { display: grid; grid-template-columns: 1fr 1fr; height: 180px; background: #1a1a1a; }
-        .image-duo img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+        .image-duo img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: 0.5s; }
+        .skill-item:hover .image-duo img { opacity: 1; }
 
         footer { padding: 4rem; text-align: center; font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid var(--border); }
+
+        @media (max-width: 768px) { header, section, .learning-summary { padding: 5rem 5%; } }
     </style>
 </head>
 <body>
@@ -80,7 +87,7 @@
 
     <header id="about">
         <div class="profile-circle">
-            <img src="https://photos.fife.usercontent.google.com/pw/AP1GczNCvRo-2cCCUnqo_Pqv2oR9z7QCq3XWW-WBfwZMYyCBx2gDV-nrTOln=w361-h641-s-no-gm?authuser=0" alt="Cyril Otwane Profile">
+            <img src="https://drive.google.com/thumbnail?id=1KLcYLG3jvm_WQ35iTOdkEpiSPmLxDMyB&sz=w1000" alt="Cyril Otwane">
         </div>
         <p class="location">Nairobi, Kenya</p>
         <h1>Cyril Otwane</h1>
@@ -94,23 +101,24 @@
         <p class="intro-text">
             I am a <b>Systems Innovator</b> and <b>Full-Stack Developer</b> based in Nairobi. 
             I specialize in the synergy between <b>Hardware Engineering</b> and <b>Modern Software</b>, 
-            focusing on <b>IoT ecosystems</b> and <b>Drone Simulations</b>.
+            with a core focus on <b>IoT ecosystems</b>, <b>Drone Simulations</b>, and <b>Robotics</b>.
         </p>
     </div>
 
     <div class="learning-summary">
+        <h2>Learning Outcomes</h2>
         <div class="learning-grid">
             <div class="learning-card">
-                <h4>Smart Infrastructure</h4>
-                <p>Mastered IoT systems, from sensor data acquisition to real-time cloud monitoring.</p>
+                <h4>IoT Connectivity</h4>
+                <p>Mastered the logic of bridging physical hardware sensors with real-time software dashboards for intelligent data monitoring.</p>
             </div>
             <div class="learning-card">
                 <h4>Autonomous Systems</h4>
-                <p>Architected Drone Simulation environments and programmed autonomous paths using Python.</p>
+                <p>Architected simulation environments and programmed autonomous flight paths using Python and mission planning tools.</p>
             </div>
             <div class="learning-card">
-                <h4>Interface Design</h4>
-                <p>Deep foundation in JavaScript and UI/UX Design to create intuitive control dashboards.</p>
+                <h4>Interface Engineering</h4>
+                <p>Developed a deep foundation in JavaScript and UI/UX design to ensure technical data is presented through clean, intuitive interfaces.</p>
             </div>
         </div>
     </div>
@@ -130,6 +138,13 @@
                 <div class="image-duo">
                     <div><img src="https://drive.google.com/thumbnail?id=1S_b-GlyPvxNw6VNiPcO3bTB6z4ewTDPz&sz=w1000"></div>
                     <div><img src="https://drive.google.com/thumbnail?id=1nfKaif-X4yb9eXJ9SyAl-ONOarW1BDDz&sz=w1000"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-info"><h3>Robotics</h3></div>
+                <div class="image-duo">
+                    <div><img src="https://drive.google.com/thumbnail?id=1ShA0S5Xd_PHPQg9fhw3EZhp-Rn6fzajp&sz=w1000"></div>
+                    <div><img src="https://drive.google.com/thumbnail?id=1ShA0S5Xd_PHPQg9fhw3EZhp-Rn6fzajp&sz=w1000"></div>
                 </div>
             </div>
         </div>
